@@ -17,6 +17,19 @@ Predict future sales/demand and present results in a clear, business-friendly wa
 - **Test MAE:** ~$14,681
 - **Test MAPE:** ~17.7%
 - Forecast shows a recurring seasonal pattern: low in Jan–Feb, peaking around Sept and Nov–Dec
+## Visual Results
+
+### Monthly Sales Trend
+
+![Monthly Sales Trend](monthly_sales_trend.jpeg)
+
+### Model Evaluation (Actual vs Predicted)
+
+![Model Evaluation](MAE.png)
+
+### 12-Month Forecast
+
+![Sales Forecast](final_forecast.png)
 
 ## Business Impact
 This forecast lets a store owner or manager plan inventory and staffing ahead of predicted demand peaks instead of reacting to them, and budget around realistic low-revenue months rather than treating them as anomalies.
