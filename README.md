@@ -1,39 +1,29 @@
 # Sales & Demand Forecasting for Businesses
 
 ## Project Overview
-
-This project predicts future sales using historical sales data from a retail superstore dataset.
+This project forecasts monthly sales for a retail superstore using 4 years of historical order data (2015–2018), and translates the forecast into concrete business actions — not just numbers.
 
 ## Objective
+Predict future sales/demand and present results in a clear, business-friendly way, while explicitly modeling trend **and** seasonality rather than just a flat trendline.
 
-To analyze historical sales trends and forecast future sales for the next 12 months using Machine Learning techniques.
-
-## Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-Learn
-- Jupyter Notebook
-
-## Steps Performed
-
-1. Data Loading and Cleaning
-2. Date Conversion and Processing
-3. Monthly Sales Aggregation
-4. Sales Trend Visualization
-5. Linear Regression Model Training
-6. Future Sales Forecasting
-7. Model Evaluation using Mean Absolute Error (MAE)
+## Approach
+- **Data cleaning:** checked and confirmed no missing values in the columns the model depends on
+- **Feature engineering:** trend (month index) + seasonality (month-of-year, one-hot encoded) — without seasonality, retail forecasts miss holiday-season demand spikes entirely
+- **Model:** Linear Regression
+- **Evaluation:** chronological train/test split (last 6 months held out) — not evaluated on training data, so the error metric reflects real forecasting performance
+- **Forecast:** 12 months ahead, visualized against historical actuals
 
 ## Results
+- **Test MAE:** ~$14,681
+- **Test MAPE:** ~17.7%
+- Forecast shows a recurring seasonal pattern: low in Jan–Feb, peaking around Sept and Nov–Dec
 
-- Monthly sales trends were analyzed.
-- Future sales for the next 12 months were predicted.
-- Forecast visualization was generated.
-- Mean Absolute Error (MAE): 17400.98
+## Business Impact
+This forecast lets a store owner or manager plan inventory and staffing ahead of predicted demand peaks instead of reacting to them, and budget around realistic low-revenue months rather than treating them as anomalies.
 
-## Conclusion
+## Tech Stack
+Python · Pandas · NumPy · Scikit-learn · Matplotlib
 
-The model helps businesses understand sales trends and estimate future demand for better planning and decision-making.
+## Files
+- `sales_forecasting.ipynb` — full notebook, runs end-to-end with no manual file upload (data loads via GitHub raw URL)
+- `train.csv` — Superstore sales dataset
